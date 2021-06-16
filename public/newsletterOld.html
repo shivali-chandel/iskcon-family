@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ISKCON</title>
+    <base href="/">
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+    <!--Default Style For HTML 5 Tags-->
+    <link href="./assets/css/reset.css" type="text/css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+    <!--Main Style Included-->
+    <link href="./assets/css/style.css" type="text/css" rel="stylesheet" />
+    <!-- Bootstrap -->
+    <link href="./assets/css/bootstrap.css" rel="stylesheet">
+    <!--Extra Style Included-->
+    <!--Main Js Included-->
+    <!-- <script src="bundle.js"></script> -->
+     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script> 
+     <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script> 
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script> 
+    <script src="./assets/js/lib/jquery.js" type="text/javascript"></script>
+    <script src="./assets/js/modernizr.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.3.1/typeahead.bundle.js" integrity="sha512-4hPOi7CoTBuZdApqBMe475jm2uuzC7dvUGCSDFkPMyfBWZHulaw4JmJVl4plJAtKVGmonz7YvB9j1aT0ayqsqQ==" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./assets/js/bootstrap.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script> -->
+    <script src="./newsletter.js"></script>
+    <script src="./assets/js/lib/jquery.js"></script>
+    <script src="./assets/js/jquery.mockjax.js"></script>
+    <script src="./assets/js/bootstrap-typeahead.js"></script>
+   
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" type="text/css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png">
+	
+</head>
+<body>
+    <div id="root"></div>
+    <div class="main">
+            <header id="masthead" role="banner">
+                <div class="container">
+                    <div class="logo-block">
+                        <a href="/"><img src="./assets/images/iskcon_logo.png" alt="" /></a>
+                    </div>
+
+                    <button class="hamburger hamburger--boring"  type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                        <!-- <span class="hamburger-label">Menu</span> -->
+                    </button>
+
+                    <nav id="site-nav" role="navigation">
+                        <ul>
+                            <li class="home"><a href="/">Home</a></li>
+                            <li class="gl"><a href="/group-locator-builder">Group Locator Builder</a></li>
+                            <li class="tnc"><a href="/terms-and-condition">Terms & Privacy Policy</a></li>
+                            <li class="login active"><a href="/login">Login</a></li>
+                            <li class="tnc"><a href="/newsletter">Sankirtan NewsLetter</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+
+            <div class="container-fuild-page">
+                <div style="background-color:#676767; padding: 10px;line-height: 26px">
+                    <div style="margin:20px,0;">
+                        <div id="breadcrumbs"><a href="javascript:void(0)">Home</a> &gt; <span class="breadcrumb_last">Login</div>
+                    </div>
+                </div>
+                <!-- Login Form-->
+                <div style="background-color:#f2673a;padding: 40px 0px 40px 0px;">
+                    <div class="row">
+                        <div class="col-12 text-center" style="margin-bottom:20px;">
+                            <img  height="60px" src="./assets/images/iskcon_logo.png" />
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-3">
+                            <input size="1" type="hidden" name="form_fields[login_login_redirect]" id="form-field-login_login_redirect"
+                            class="elementor-field elementor-size-sm  elementor-field-textual" value="iskcon.elvanto.net">
+                            <select id="mySelect" style="width:50%">
+                                <option value="">Select Year</option>
+                              </select>
+                        </div>
+                    <div class="col-md-3">
+                    <div class="">
+                        <input id="period" type="text" class="" placeholder="Choose Period..." autocomplete="off" oninput="selectPeriod()"/>
+                    </div>
+                    </div>
+                    <div class="col-md-3">
+                    <div class="">
+                    <input id="group" type="text" class="" placeholder="Choose Group..." autocomplete="off" oninput="selectGroup()"/>
+                    </div>
+                    </div>
+                   
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center" style="margin-top:30px;">
+                            <button onClick="selected()">Generate NewsLetter</button>
+                        </div>
+                    </div>
+                   
+                    
+  <!-- <button 
+                                class="g-recaptcha" 
+        data-sitekey="6LfNwc0ZAAAAAGGY8224ROTY3g8WTsz1pDwuNcxQ" 
+        data-callback='onSubmit' 
+        data-action='submit'></button> -->
+                </div>
+                <!-- End of Login Form-->
+                <!-- Registration Form-->
+              
+                <!-- End Registration Form-->
+               
+            </div>
+        <footer>
+            <div class="footer">
+                <p>
+                    By using this site, you agree with our updated <a routerLink="/terms-and-condition">Terms & Privacy Policy</a>.
+                </p>
+            </div>
+        </footer>
+   
+    <button onclick="topFunction()" id="myBtn" title="Go to top" style="display: none;">Top</button>
+   
+    <!-- Script from Existing APP -->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <!-- <script type="text/babel">
+        class Hello extends React.Component {
+            constructor (props) {
+                super(props)
+                this.state = {
+                    text : ''
+                }
+            }
+            call = () => {
+                this.setState({text : 'Hello World!'})
+            }
+          render() {
+            return <div><div >{this.state.text}</div>
+            <div style={{  display: "flex",
+          justifyContent: "center",
+          backgroundColor : "#f2673a",
+          alignSelf: "center"}}>
+                 <button  onClick={() => this.call()}>Generate NewsLetter</button>
+                 </div>
+                  </div>
+          }
+        }
+  
+        ReactDOM.render(<Hello />, document.getElementById('root'))
+      </script> -->
+    <script>
+       
+//          $('#period').typeahead({
+//                     source: ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+//   'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
+//   'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
+//   'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
+//   'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+//   'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+//   'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
+//   'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
+//   'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+// ]
+//                 });
+    let year = document.getElementById("mySelect").value 
+    const YEARS = [
+         "1975",
+         "1976",
+         "1977",
+         "1978",
+         "1979",
+         "1980",
+         "1981",
+         "1982",
+         "1983",
+         "1984",
+         "1985",
+         "1986",
+         "1987",
+         "1988",
+         "1989",
+         "1990",
+         "1991",
+         "1992",
+         "1993",
+         "1994",
+         "1995",
+         "1996",
+         "1997",
+         "1998",
+         "1999",
+         "2000",
+         "2001",
+         "2002",
+         "2003",
+         "2004",
+         "2005",
+         "2006",
+         "2007",
+         "2008",
+         "2009",
+         "2010",
+         "2011",
+         "2012",
+         "2013",
+         "2014",
+         "2015",
+         "2016",
+         "2017",
+         "2018",
+         "2019",
+         "2020",
+         "2021",
+       ];
+        
+       var x = document.getElementById("mySelect");
+  for (let year in YEARS){
+    var option = document.createElement("option");
+    option.text = YEARS[year];
+    option.value = YEARS[year];
+      x.add(option);
+  }
+  
+
+
+function call () {
+    return new Promise(function(resolve, reject) {
+       var AddDomain ="http://localhost:8080";
+     //  console.log('hi', AddDomain+'/api/search-period?q=' + document.getElementById("period").value + '&year='+document.getElementById("mySelect").value)
+  $.get(AddDomain+'/api/search-period?q=' + document.getElementById("period").value + '&year='+document.getElementById("mySelect").value, function(data, status){
+    resolve(data)
+  });
+});
+
+}
+
+
+
+function chooseGroup () {
+    return new Promise(function(resolve, reject) {
+       var AddDomain ="http://localhost:8080";
+     // console.log(AddDomain+'/api/search-group?q=' + document.getElementById("group").value)
+  $.get(AddDomain+'/api/search-group?q=' + document.getElementById("group").value, function(data, status){
+    resolve(data)
+  });
+});
+
+}
+
+function selectedOld () {
+var group = $('#group').val();
+var period = $('#period').val();
+console.log('group is', group, 'period is', period)
+var data = {
+    year : document.getElementById("mySelect").value
+}
+localStorage.setItem("test", data);
+// window.open("https://sankirtan.dikonia.in/iskconfamily");
+
+}
+$.myjQuery = function(val, data) {
+if(val == 'period')
+{
+var autocomplete = $('#period').typeahead();
+autocomplete.data('typeahead').source = data;
+}
+else {
+var autocomplete = $('#group').typeahead();
+autocomplete.data('typeahead').source = data;
+}
+};
+function selected () {
+    var data = {
+    year : '2015'
+ }
+   localStorage.setItem("test", JSON.stringify(data));
+    window.location.href='/newsletter';
+}
+
+function selectPeriod () {
+call()
+.then(function(v) { // `delay` returns a promise
+$.myjQuery('period', v)
+  })
+  .catch(function(v) {
+  });
+  }
+
+  function selectGroup () {
+chooseGroup()
+.then(function(v) { // `delay` returns a promise
+$.myjQuery('group', v)
+  })
+  .catch(function(v) {
+  });
+  }
+  
+         
+
+	
+	// replace this variable values with live site URL. 
+       
+		
+// First Check trim function exist or not if not exist create its own function
+if (typeof String.prototype.trim != 'function') { // detect native implementation
+  String.prototype.trim = function () {
+    return this.replace(/^\s+/, '').replace(/\s+$/, '');
+  };
+}
+
+// Create Ajax Object for ajax Call.
+var ajax = {};
+ajax.x = function () {
+    if (typeof XMLHttpRequest !== 'undefined') {
+        return new XMLHttpRequest();
+    }
+    var versions = [
+        "MSXML2.XmlHttp.6.0",
+        "MSXML2.XmlHttp.5.0",
+        "MSXML2.XmlHttp.4.0",
+        "MSXML2.XmlHttp.3.0",
+        "MSXML2.XmlHttp.2.0",
+        "Microsoft.XmlHttp"
+    ];
+	var xhr;
+    for (var i = 0; i < versions.length; i++) {
+        try {
+            xhr = new ActiveXObject(versions[i]);
+            break;
+        } catch (e) {
+        }
+    }
+    return xhr;
+};
+
+ajax.send = function (url, callback, method, data, async) {
+    if (async === undefined) {
+        async = true;
+    }
+    var x = ajax.x();
+	x.withCredentials = true;
+    x.open(method, url, async);
+    x.onreadystatechange = function () {
+   // debugger;
+	    if (x.readyState == 4) {
+	 callback(x.responseText)
+        }
+    };
+    if (method == 'POST') {
+        x.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    }
+    x.send(data);
+};
+
+ajax.get = function (url, data, callback, async) {
+    var query = [];
+    for (var key in data) {
+        query.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));
+    }
+    ajax.send(url + (query.length ? '?' + query.join('&') : ''), callback, 'GET', null, async)
+};
+
+ajax.post = function (url, data, callback, async) {
+    var query = [];
+    for (var key in data) {
+        query.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));
+    }
+    ajax.send(url, callback, 'POST', query.join('&'), async)
+};
+
+
+var strFromAppend="form-field-";
+        function validatedata() {
+            document.getElementById("spIskconUsername").style.display = "none";
+            document.getElementById("spIskconPassword").style.display = "none";
+            document.getElementById("spIskconCommon").style.display = "none";
+            var blnreturn = true;
+            if (document.getElementById(strFromAppend+"login_username").value.trim() == "") {
+                document.getElementById("spIskconUsername").innerHTML = "Please enter username.";
+                document.getElementById("spIskconUsername").style.display = "block";
+                blnreturn = false;
+            }
+            if (document.getElementById(strFromAppend+"login_password").value.trim() == "") {
+                document.getElementById("spIskconPassword").innerHTML = "Please enter password.";
+                document.getElementById("spIskconPassword").style.display = "block";
+                blnreturn = false;
+            }
+            return blnreturn;
+        }
+
+        // new code for auto login
+        function startLoginAuto(blnregistration)
+                    {
+
+					 var nameofhost=document.getElementById(strFromAppend+"login_login_redirect").value;
+
+                    	var usercok = getCookie("remiskcon");
+
+                    	if(usercok!=""){
+
+                        	if(window.location.href.indexOf("logout=1")>-1 && blnregistration==false){
+                        	    usercok="";
+                        	    setCookie('remiskcon','',1);
+                        	    document.cookie = 'remiskcon=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                        	    ajax.get(AddDomain+'/logout', {}, function(responseText) {
+								});
+                        	}
+                    	}
+
+                      if (usercok != "") {
+
+
+                    		ajax.post(AddDomain+'/login', {coki:usercok,username:'',password:'',hostname:nameofhost}, function(responseText) {
+                    		var responsedata=JSON.parse(responseText.trim());
+                    				if(responsedata!=null && responsedata!=undefined && responsedata['success']!=null && responsedata['success']!=undefined &&  responsedata['success']=="1")
+                    				{
+
+                    				var username="";
+                    				var password="";
+                    					if(responsedata['uname']!=null && responsedata['uname']!=undefined && responsedata['uname']!="")
+                    					{
+                    							username=responsedata['uname'];
+                    							document.getElementById(strFromAppend+"login_username").value=username;
+                    					}
+                    					if(responsedata['pass']!=null && responsedata['pass']!=undefined && responsedata['pass']!="")
+                    					{
+                    							password=responsedata['pass'];
+                    							document.getElementById(strFromAppend+"login_password").value=password;
+                    					}
+                    					if(username!="" && password!="")
+                    					{
+                    					    jQuery("#"+strFromAppend+"login_username").attr("name","login_username");
+											jQuery("#"+strFromAppend+"login_password").attr("name","login_password");
+											jQuery("#"+strFromAppend+"login_login_redirect").attr("name","hostname");
+
+                    					document.getElementById("frmThirdParty").action = AddDomain+'/member/';
+
+
+                                            document.getElementById("frmThirdParty").submit();
+                    						return true;
+                    					}
+
+                    				}
+
+                    		});
+                      }
+                    }
+                    function setCookie(cname, cvalue, exdays) {
+                      var d = new Date();
+                      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                      var expires = "expires="+d.toUTCString();
+                      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+                    }
+
+                    function getCookie(cname) {
+                      var name = cname + "=";
+                      var ca = document.cookie.split(';');
+                      for(var i = 0; i < ca.length; i++) {
+                        var c = ca[i];
+                        while (c.charAt(0) == ' ') {
+                          c = c.substring(1);
+                        }
+                        if (c.indexOf(name) == 0) {
+                          return c.substring(name.length, c.length);
+                        }
+                      }
+                      return "";
+                    }
+
+        // end of new code.
+
+        // Registration validation
+
+        function validateregdata()
+{
+	document.getElementById("spIskconFirstNameReg").style.display="none";
+	document.getElementById("spIskconLastNameReg").style.display="none";
+	document.getElementById("spIskconEmailReg").style.display="none";
+	//document.getElementById("spIskconPhone").style.display="none";
+	//document.getElementById("spIskconMobile").style.display="none";
+	document.getElementById("spIskconUsernameReg").style.display="none";
+	document.getElementById("spIskconPasswordReg").style.display="none";
+	document.getElementById("spIskconRePassword2Reg").style.display="none";
+
+	document.getElementById("spIskconCommonReg").style.display="none";
+	var blnreturn=true;
+	if(document.getElementById(strFromAppend+"reg_firstname").value.trim()=="")
+	{
+		document.getElementById("spIskconFirstNameReg").innerHTML="Please enter firstname.";
+		document.getElementById("spIskconFirstNameReg").style.display="block";
+		blnreturn=false;
+	}
+	if(document.getElementById(strFromAppend+"reg_lastname").value.trim()=="")
+	{
+		document.getElementById("spIskconLastNameReg").innerHTML="Please enter lastname.";
+		document.getElementById("spIskconLastNameReg").style.display="block";
+		blnreturn=false;
+	}
+	if(document.getElementById(strFromAppend+"reg_email").value.trim()=="")
+	{
+		document.getElementById("spIskconEmailReg").innerHTML="Please enter email.";
+		document.getElementById("spIskconEmailReg").style.display="block";
+		blnreturn=false;
+	}
+	/*if(document.getElementById("reg_phone").value.trim()=="")
+	{
+		document.getElementById("spIskconPhone").innerHTML="Please enter lastname.";
+		document.getElementById("spIskconPhone").style.display="block";
+		blnreturn=false;
+	}
+	if(document.getElementById("reg_mobile").value.trim()=="")
+	{
+		document.getElementById("spIskconMobile").innerHTML="Please enter lastname.";
+		document.getElementById("spIskconMobile").style.display="block";
+		blnreturn=false;
+	}*/
+	if(document.getElementById(strFromAppend+"reg_username").value.trim()=="")
+	{
+		document.getElementById("spIskconUsernameReg").innerHTML="Please enter username.";
+		document.getElementById("spIskconUsernameReg").style.display="block";
+		blnreturn=false;
+	}
+	if(document.getElementById(strFromAppend+"reg_password").value.trim()=="")
+	{
+		document.getElementById("spIskconPasswordReg").innerHTML="Please enter password.";
+		document.getElementById("spIskconPasswordReg").style.display="block";
+		blnreturn=false;
+	}
+
+	if(document.getElementById(strFromAppend+"reg_password").value.trim()!=document.getElementById(strFromAppend+"reg_repassword").value.trim())
+	{
+		document.getElementById("spIskconPasswordReg").innerHTML="Both password must be same";
+		document.getElementById("spIskconPasswordReg").style.display="block";
+		blnreturn=false;
+	}
+	if(document.getElementById(strFromAppend+"reg_password").value.trim()!="" && (document.getElementById(strFromAppend+"reg_password").value.trim()==document.getElementById(strFromAppend+"reg_repassword").value.trim()))
+	{
+			var strError="";
+		if(document.getElementById(strFromAppend+"reg_password").value.trim().length<7)
+		{
+			strError="Passwords need to be at least 8 characters long<br/>";
+
+		}
+		var strpassword =document.getElementById(strFromAppend+"reg_password").value.trim();
+		var blnUpper=false;
+		var blnLower=false;
+		var blnNumber=false;
+		var blnOtherChar=false;
+		var blnTwoTime=false;
+		var arrchar=new Array();
+		for(var i=0; i<strpassword.length;i++)
+		{
+			if(strpassword.charCodeAt(i)>=65 && strpassword.charCodeAt(i)<=90)
+			{
+			blnUpper=true;
+			}
+			else if(strpassword.charCodeAt(i)>=97 && strpassword.charCodeAt(i)<=122)
+			{
+			blnLower=true;
+			}
+			else if(strpassword.charCodeAt(i)>=48 && strpassword.charCodeAt(i)<=57)
+			{
+			blnNumber=true;
+			}
+			else
+			{
+			blnOtherChar=true;
+			}
+			if(!arrchar[strpassword[i]])
+			{
+			arrchar[strpassword[i]]=1;
+			}
+			else
+			{
+				var intval =arrchar[strpassword[i]];
+				if(intval==2)
+				{
+				blnTwoTime=true;
+				}
+				arrchar[strpassword[i]]=intval+1;
+			}
+
+
+		}
+		if((!blnUpper) ||(!blnLower) ||(!blnNumber) ||(!blnOtherChar) || blnTwoTime)
+		{
+			strError+="Passwords contain at least one uppercase letter, one lowercase letter, one number & one non-alphanumeric character. No character may be repeated more than 2 times in a row.";
+
+		}
+		if(strError!="")
+		{
+		document.getElementById("spIskconPasswordReg").innerHTML=strError;
+		document.getElementById("spIskconPasswordReg").style.display="block";
+		blnreturn=false;
+		}
+	}
+	return blnreturn;
+}
+
+        //end of Registration validation.
+
+
+document.addEventListener("DOMContentLoaded", function(event) {
+	jQuery('#Log_In_Button_1').click(function(){
+	// Javascrip code here
+
+            if (validatedata()) {
+                document.getElementById(strFromAppend+"login_username").setAttribute("name","login_username");
+                document.getElementById(strFromAppend+"login_password").setAttribute("name","login_password");
+                var nameofhost=document.getElementById(strFromAppend+"login_login_redirect").value;
+               jQuery("#"+strFromAppend+"login_login_redirect").attr("name","hostname");
+                //ajax.post('https://localhost/login', {username: document.getElementById("login_username").value,password:document.getElementById("login_password").value}, function(responseText) {
+                ajax.post(AddDomain+'/login', {
+                    username: document.getElementById(strFromAppend+"login_username").value,
+                    password: document.getElementById(strFromAppend+"login_password").value,hostname:nameofhost
+                }, function(responseText) {
+                    var responsedata=JSON.parse(responseText.trim());
+
+                    if(responsedata!=null && responsedata!=undefined && responsedata['success']!=null && responsedata['success']!=undefined &&  responsedata['success']=="1") {
+                        if(responsedata['cok']!=null && responsedata['cok']!=undefined)
+					{
+						setCookie("remiskcon",responsedata["cok"],365);
+					}
+					jQuery("#"+strFromAppend+"login_username").attr("name","login_username");
+					jQuery("#"+strFromAppend+"login_password").attr("name","login_password");
+					jQuery("#"+strFromAppend+"login_login_redirect").attr("name","hostname");
+                        document.getElementById("frmThirdParty").action = AddDomain+'/member/';
+
+                        document.getElementById("frmThirdParty").submit();
+                        return true;
+                    } else {
+                        document.getElementById("spIskconCommon").innerHTML = "Your Login detail is not correct.";
+                        document.getElementById("spIskconCommon").style.display = "block";
+                    }
+                }, function(error) {
+                    console.log('eee', error)
+                })
+            }
+            return false;
+	});
+
+	// registration Page
+
+
+jQuery('#Reg_In_Button_1').click( function(){
+	if(validateregdata())
+	{
+
+var nameofhost=document.getElementById(strFromAppend+"login_login_redirect").value;
+		ajax.post(AddDomain+'/register', {username: document.getElementById(strFromAppend+"reg_username").value,password:document.getElementById(strFromAppend+"reg_password").value,firstname: document.getElementById(strFromAppend+"reg_firstname").value,lastname: document.getElementById(strFromAppend+"reg_lastname").value,email: document.getElementById(strFromAppend+"reg_email").value,phone:'',mobile:'',hostname:nameofhost}, function(responseText) {
+
+		var responsedata=JSON.parse(responseText.trim());
+
+                    if(responsedata!=null && responsedata!=undefined && responsedata['success']!=null && responsedata['success']!=undefined &&  responsedata['success']=="1") {
+                     if(responsedata['cok']!=null && responsedata['cok']!=undefined)
+					{
+						setCookie("remiskcon",responsedata["cok"],365);
+						startLoginAuto(true);
+					}
+				}
+				else
+				{
+				if(responsedata!=null && responsedata!=undefined && responsedata['err']!=null && responsedata['err']!=undefined){
+				document.getElementById("spIskconCommonReg").innerHTML=responsedata['err'];
+				}
+				else
+				{
+				document.getElementById("spIskconCommonReg").innerHTML="Issue in registration process. Kindly try it agian after sometime."
+				}
+				document.getElementById("spIskconCommonReg").style.display="block";
+				}
+		});
+	}
+	return false;
+});
+	// End of Registration Page.
+
+return false;
+	});
+
+	jQuery(document).ready(function(){
+	// new code
+	// startLoginAuto(false);
+	jQuery(".hamburger--boring").click(function(){
+	
+	if(jQuery(".hamburger--boring").hasClass("is-active")){
+	jQuery(".hamburger--boring").delay(2000).removeClass("is-active");
+	jQuery("#site-nav").delay(2000).removeClass("is-active");
+	}
+	else
+	{
+	jQuery(".hamburger--boring").delay(2000).addClass("is-active");
+	jQuery("#site-nav").delay(2000).addClass("is-active");
+	}
+	});
+	});
+	//end code
+
+
+    </script>
+
+
+    <!-- End of Script from Existing APP -->
+
+</body>
+
+
+
+</script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtFDAommrF3j029D-odjTunwIN-hX2iNM"
+        async defer></script>-->
+</html>

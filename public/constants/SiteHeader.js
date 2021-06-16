@@ -1,0 +1,12 @@
+export const HEADER_STYLE = "headerStyles";
+export const HEADER_COLOR = "color";
+export const MENU_STYLE = "menuStyles";
+export const HEADER_LOGO = "logo";
+export const SITE_TITLE = "siteTitle";
+export const MENU_BACKGROUND = "menuBackground";
+export const MENU_TEXT = "menuText";
+export const CURRENT_USER = "currentUser";
+export const PROFILE_AVATAR = "avatar";
+export const USER_FIRSTNAME = "firstName";
+export const USER_LASTNAME = "lastName";
+export const USER_EMAIL = "email";

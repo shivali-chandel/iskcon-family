@@ -1,0 +1,38 @@
+<div class="main">
+<div class="" [ngClass]="{'hero' : addClass}">
+  <header id="masthead" role="banner">
+    <div class="container">
+      <div class="logo-block">
+        <a routerLink="/"><img src="./assets/images/iskcon_logo.png" alt=""/></a>
+      </div>
+
+      <button class="hamburger hamburger--boring" type="button">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        <!-- <span class="hamburger-label">Menu</span> -->
+      </button>
+
+      <nav id="site-nav" role="navigation">
+	  
+        <ul>
+          <li class="col-anim home"><a routerLink="/">Home</a></li>
+          <li class="col-anim gl"><a routerLink="/group-locator-builder">Group Locator Builder</a></li>
+          <li class="col-anim tnc"><a routerLink="/terms-and-condition">Terms & Privacy Policy</a></li>
+          <li class="col-anim login"><a href="/login">Login2</a></li>
+          <li class="col-anim login"><a href="/newsletter">Sankirtan Newsletter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <router-outlet></router-outlet>
+</div>
+<footer>
+  <div class="footer">
+    <p> By using this site, you agree with our updated <a routerLink="/terms-and-condition">Terms & Privacy Policy</a>.
+    </p>
+  </div>
+</footer>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top" style="display: none;">Top</button>

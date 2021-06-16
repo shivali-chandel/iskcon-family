@@ -1,0 +1,12 @@
+eco-fab-speed-dial {
+  position: fixed;
+  z-index: 100;
+  padding-left: 950px;
+  padding-top: 450px;
+}
+@media (max-width: 767px) {
+  eco-fab-speed-dial {
+    padding-left: 225px;
+    padding-top: 300px;
+  }
+}

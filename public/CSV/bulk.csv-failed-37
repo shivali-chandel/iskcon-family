@@ -1,0 +1,3 @@
+Date,Quantity,Amount,Books,Email Address,First Name,Last Name,Mobile,Gender,Group,Distributors,Location Name,Address,City,State,Zip,Country,Address Type,Community Type,Coverage,Status,Comment,GNAB
+5/1020,"[23,5]","[0,52]","[3,1]",vineet@mail.com,bulk import,Chauhan,85425632401,Male,6,"[4,5]",St. 1146,My Address,City Name,State Name,92255,United State of America,Motel,Gated,50%,Active,This is my test comment!,This is GNAB text!
+/14/2020,[23],"[0,52]","[3,1]",vineet@mail.com,Vineet,Chauhan,8542563401,Male,1,"[4,5]",St. 1148,My Address,City Name,State Name,92255,United State of America,Motel,Gated,50%,Active,This is my test comment!,This is GNAB text!

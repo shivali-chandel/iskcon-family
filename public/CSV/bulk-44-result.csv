@@ -1,0 +1,2 @@
+Date,Quantity,Amount,Books,Email Address,First Name,Last Name,Mobile,Gender,Group,Distributors,Location Name,Address,City,State,Zip,Country,Address Type,Community Type,Coverage,Comment,GNAB,error
+2020-08-23,"[23,5]",[100.200],"[3,1]",vineet.com,Vineet,Chauhan,8542563202,Male,1,"[6,37]",St. 1143,My Address,City Name,State Name,92256,United State of America,Motel,Gated,51%,This is my test comment!,This is GNAB text!,"Invalid Email,You can't choose Group ID(1) because this is a global group"

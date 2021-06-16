@@ -1,0 +1,126 @@
+.login_header {
+  margin-top: 10px;
+}
+.login_header h4 {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 600;
+}
+.login_heading {
+  font-size: 24px;
+  color: #fff;
+  font-weight: 600;
+}
+.login_form h4 {
+  font-size: 18px;
+  font-weight: 600;
+}
+form.float-label {
+  margin-top: 20px;
+}
+.float-label-view{
+  margin-top: 20px;
+}
+.float-label .control {
+  position: relative;
+  width: 100%;
+  padding-top: 23px;
+  padding-bottom: 10px;
+}
+.float-label input {
+  display: block;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  resize: none;
+  border-bottom: 1px solid #e7e7e7 !important;
+  padding: 5px 0;
+}
+.float-label input:focus,
+.float-label input:valid {
+  border-bottom: 1px solid #9e6bd0 !important;
+}
+.float-label input + label {
+  position: absolute;
+  top: 10px;
+  transition: top 0.7s ease, opacity 0.7s ease;
+  opacity: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ccc;
+}
+.float-label label.has-value {
+  opacity: 1;
+  color: #552f7a;
+}
+.float-label input:focus + label {
+  color: #552f7a;
+}
+.term_condition_section {
+  margin-top: 20px;
+}
+.term_condition_section a {
+  color: #552f7a;
+  border-bottom: 1px solid #9e6bd0;
+  text-decoration: none;
+}
+.term_condition_section a span {
+  color: #000;
+}
+.signup_btn,
+.signin_btn,
+.forgot_paswrd {
+  background: #372b41;
+  color: #fff;
+  width: 100%;
+  margin-top: 40px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  padding: 8px 0;
+}
+.signup_btn:hover,
+.signin_btn:hover,
+.forgot_paswrd:hover {
+  color: #fff;
+}
+.bottom_footer p {
+  font-size: 18px;
+}
+.bottom_footer p a {
+  color: #212529;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/** Css For Sign in Screen **/
+
+.submit_btn .signin_btn {
+  margin-top: 100px;
+}
+.forgot_link {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.forgot_link a {
+  color: #212529;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+/** Css for Forgot screen **/
+
+.submit_btn .forgot_paswrd {
+  margin-top: 60px;
+}
+.forgot_heading {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 600;
+}
+.field-error {
+  font-size: 14px;
+  color: #ff0000;
+}
+

@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Export</h1>
+<div mat-dialog-content>
+  <mat-tab-group>
+    <mat-tab label="JavaScript">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <textarea matInput>{{javascriptContent}}</textarea>
+      </mat-form-field>
+    </mat-tab>
+    <mat-tab label="iFrame">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <textarea matInput>{{iframeContent}}</textarea>
+      </mat-form-field>
+
+    </mat-tab>
+  </mat-tab-group>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="copyToClipBoard()" cdkFocusInitial>Copy</button>
+</div>

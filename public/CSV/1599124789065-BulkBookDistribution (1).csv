@@ -1,0 +1,4 @@
+Date,Books,Quantity,Amount,Email Address,First Name,Last Name,Mobile,Gender,Group,Distributors,Location Name,Address,City,State,Zip,Country,Address Type,Community Type,Coverage,Comment,GNAB
+2020-08-24,"[3,1]","[23,5]",[100.200],vineet@mail.com,Vineet,Chauhan,8542563201,Male,4,"[6,37]",St. 1142,My Address,City Name,State Name,92255,United State of America,Motel,Gated,50%,This is my test comment!,This is GNAB text!
+2020-08-23,"[3,1]","[23,5]",[100.200],vineet.com,Vineet,Chauhan,8542563202,Male,1,"[6,37]",St. 1143,My Address,City Name,State Name,92256,United State of America,Motel,Gated,51%,This is my test comment!,This is GNAB text!
+2020-22-08,"[3,1]","[23,5]",[100.200],vineet@mail.com,Vineet,Chauhan,8542563203,Male,19,"[6,37]",St. 1144,My Address,City Name,State Name,92257,United State of America,Motel,Gated,52%,This is my test comment!,This is GNAB text!

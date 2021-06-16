@@ -1,0 +1,82 @@
+<div class="main-content text-center extrapadd" [ngStyle]="{'pointer-events': isLoading ? 'none' : 'auto'}">
+  <!--<div class="container">-->
+  <div class="container">
+    <div class="text-container">
+      <h2>ISKCON Group Locator Builder</h2>
+      <p>ISKCON Group Locator Builder can be used to generate a map of ISKCON location such as temples, restaurant or
+        bhakti-vriksha groups. </p>
+      <p>The builder can generate either Javascript or iFrame code that can be embedded in the website to display the
+        map. The builder also allows to filter the groups for select categories. </p>
+    </div>
+  </div>
+  <div class="">
+    <div class="iframe-block">
+      <!--<div class="container ">-->
+      <div class="" [ngClass]="{'container': doAddClass}">
+        <!--<div class="loader"></div>-->
+        <div class="" [ngClass]="{'loader': doAddClass}">
+          <div class="loader_ajax_small" *ngIf="isLoading"></div>
+          <div class="w100" [ngClass]="{'reduceop' : isLoading}">
+            <nav class="navbar navbar-default">
+              <div class="">
+                <div class="container-fluid page">
+                  <div class="row">
+                    <div class="col-md-5">
+                      <!--<input class="form-control"/>-->
+                      <mat-form-field class="example-full-width" appearance="outline">
+                        <input matInput placeholder="Search" id="search" (blur)="ChangeText($event)">
+                        <mat-icon color="black" matSuffix>search</mat-icon>
+                      </mat-form-field>
+                    </div>
+                    <div class="col-md-5">
+                      <mat-form-field appearance="outline">
+                        <mat-select #select placeholder="Categories" multiple (valueChange)="ChangeValue($event)"
+                                    (openedChange)="OpenChangeEvent($event);">
+                          <mat-option class="button-class mydonebtn">
+                            <button style="display: none" (click)="DoneClicked()" mat-raised-button value="">
+                              <mat-icon>done</mat-icon>
+                              <span>Done</span></button>
+                          </mat-option>
+                          <mat-option *ngFor="let topping of categories" [value]="topping.id">{{topping.name}}
+                          </mat-option>
+                          <!--<mat-option class="button-class mydonebtn">
+                            <button (click)="DoneClicked()" mat-raised-button value="">
+                              <mat-icon>done</mat-icon>
+                              <span>Done</span></button>
+                          </mat-option>-->
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                    <div class="col-md-2" style="text-align:center;">
+                      <div class="col-md-12 mobile-visibility">
+                        <button mat-fab color="primary" (click)="OnOpenClose(false)">
+                          <mat-icon aria-label="Example icon-button with a heart icon">search</mat-icon>
+                        </button>
+                        <button mat-fab color="primary" (click)="openDialog()" *ngIf="class1 === 'col-md-6'">
+                          <mat-icon aria-label="Example icon-button with a heart icon">file_copy</mat-icon>
+                        </button>
+                      </div>
+                      <div class="{{class1}} desktop-visibility">
+                        <button mat-fab color="primary" (click)="OnOpenClose(false)">
+                          <mat-icon aria-label="Example icon-button with a heart icon">search</mat-icon>
+                        </button>
+                      </div>
+                      <div class="col-md-6 desktop-visibility" *ngIf="class1 === 'col-md-6'">
+                        <button mat-fab color="primary" (click)="openDialog()">
+                          <mat-icon aria-label="Example icon-button with a heart icon">file_copy</mat-icon>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav>
+            <div class="map-container">
+              <div id="map"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
